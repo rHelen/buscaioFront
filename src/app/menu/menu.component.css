@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fs-16
+{
+  font-size: 16pt;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#navbar {
+  overflow-x: hidden;
+  width: 100vw;
+  display: flex;
+  gap: 32px;
+}
+
+#cabecalho-img {
+  height: 72px;
+  width: 72px;
+}
+
+#cabecalho-item {
+  font-family: 'Sarala', sans-serif !important;
+  color: #756E6E !important;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+
