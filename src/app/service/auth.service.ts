@@ -17,39 +17,54 @@ export class AuthService {
 
 
 entrar(userLogin: UsuarioLogin): Observable<UsuarioLogin>{
-  return this.http.post<UsuarioLogin>('https://buscaio.herokuapp.com/usuarios/logar', userLogin)
+  return this.http.post<UsuarioLogin>('http://localhost:9000/usuarios/logar', userLogin)
+  console.log(userLogin)
 }
+
+// entrar(userLogin: UsuarioLogin): Observable<UsuarioLogin>{
+//   return this.http.post<UsuarioLogin>('https://buscaio.herokuapp.com/usuarios/logar', userLogin)
+// }
 
 cadastrar(user: Usuario): Observable<Usuario>{
-  return this.http.post<Usuario>('https://buscaio.herokuapp.com/usuarios/cadastrar', user)
+  return this.http.post<Usuario>('http://localhost:9000/usuarios/cadastrar', user)
 }
+
+// cadastrar(user: Usuario): Observable<Usuario>{
+//   return this.http.post<Usuario>('https://buscaio.herokuapp.com/usuarios/cadastrar', user)
+// }
 
 atualizar(usuario: Usuario): Observable<Usuario>{
-  return this.http.put<Usuario>('https://buscaio.herokuapp.com/usuarios/atualizar', usuario, this.token)
+  return this.http.put<Usuario>('http://localhost:9000/usuarios/atualizar', usuario)
 }
+// atualizar(usuario: Usuario): Observable<Usuario>{
+//   return this.http.put<Usuario>('https://buscaio.herokuapp.com/usuarios/atualizar', usuario, this.token)
+// }
 
 getByIdUsuario(id: number): Observable<Usuario>{
-  return this.http.get<Usuario>(`https://buscaio.herokuapp.com/usuarios/${id}`, this.token)
+  return this.http.get<Usuario>(`http://localhost:9000.com/usuarios/${id}`)
 }
+// getByIdUsuario(id: number): Observable<Usuario>{
+//   return this.http.get<Usuario>(`https://localhost:9000.com/usuarios/${id}`, this.token)
+// }
 
-token = {
-  headers: new HttpHeaders().set('Authorization', environment.token)
-}
+// token = {
+//   headers: new HttpHeaders().set('Authorization', environment.token)
+// }
 
-refreshToken() {
-  this.token = {
-    headers: new HttpHeaders().set('Authorization', environment.token)
-  }
-}
+// refreshToken() {
+//   this.token = {
+//     headers: new HttpHeaders().set('Authorization', environment.token)
+//   }
+// }
 
-logado(){
-  let ok = false
+// logado(){
+//   let ok = false
 
-  if(environment.token !=''){
-    ok = true
-  }
+//   if(environment.token =''){
+//     ok = true
+//   }
 
-  return ok
-}
+  // return ok
+// }
 
 }

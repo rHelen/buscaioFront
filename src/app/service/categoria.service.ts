@@ -11,27 +11,46 @@ export class CategoriaService {
 
   constructor(private http: HttpClient) { }
 
-  token = {
-    headers: new HttpHeaders().set('Authorization', environment.token)
-  }
+  // token = {
+  //   headers: new HttpHeaders().set('Authorization', environment.token)
+  // }
 
   getAllTema(): Observable<Categoria[]>{
-    return this.http.get<Categoria[]>('https://buscaio.herokuapp.com/categorias', this.token)
+    return this.http.get<Categoria[]>('http://localhost:9000/categorias')
   }
 
   getByIdTema(id: number): Observable<Categoria>{
-    return this.http.get<Categoria>(`https://buscaio.herokuapp.com/categorias/${id}`, this.token)
+    return this.http.get<Categoria>(`http://localhost:9000/categorias/${id}`)
   }
 
   postTema(categoria: Categoria): Observable<Categoria>{
-    return this.http.post<Categoria>('https://buscaio.herokuapp.com/categorias', categoria, this.token)
+    return this.http.post<Categoria>('http://localhost:9000/categorias', categoria)
   }
 
   putTema(categoria: Categoria): Observable<Categoria>{
-    return this.http.put<Categoria>('https://buscaio.herokuapp.com/categorias', categoria, this.token)
+    return this.http.put<Categoria>('http://localhost:9000/categorias', categoria)
   }
 
   deleteTema(id: number){
-    return this.http.delete(`https://buscaio.herokuapp.com/categorias/${id}`, this.token)
+    return this.http.delete(`http://localhost:9000/categorias/${id}`)
   }
+  // getAllTema(): Observable<Categoria[]>{
+  //   return this.http.get<Categoria[]>('https://buscaio.herokuapp.com/categorias', this.token)
+  // }
+
+  // getByIdTema(id: number): Observable<Categoria>{
+  //   return this.http.get<Categoria>(`https://buscaio.herokuapp.com/categorias/${id}`, this.token)
+  // }
+
+  // postTema(categoria: Categoria): Observable<Categoria>{
+  //   return this.http.post<Categoria>('https://buscaio.herokuapp.com/categorias', categoria, this.token)
+  // }
+
+  // putTema(categoria: Categoria): Observable<Categoria>{
+  //   return this.http.put<Categoria>('https://buscaio.herokuapp.com/categorias', categoria, this.token)
+  // }
+
+  // deleteTema(id: number){
+  //   return this.http.delete(`https://buscaio.herokuapp.com/categorias/${id}`, this.token)
+  // }
 }

@@ -12,10 +12,15 @@ import { AuthService } from '../service/auth.service';
 export class PerfilComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
-  nome = environment.nome
-  foto = environment.foto
+  nome = "Rute Helen Costa"
+  foto = "https://github.com/rHelen.png"
   id = environment.id
-  tipo = environment.tipo
+  tipo = "Padrão"
+  // usuario: Usuario = new Usuario()
+  // nome = environment.nome
+  // foto = environment.foto
+  // id = environment.id
+  // tipo = environment.tipo
 
   constructor(
     private auth: AuthService,
@@ -26,10 +31,10 @@ export class PerfilComponent implements OnInit {
   ngOnInit(){
     window.scroll(0,0)
 
-    if(environment.token == ''){
+    //if(environment.token == ''){
       // alert('Sua sessão expirou, faça login novamente!')
-      this.router.navigate(['/login'])
-    }
+      //this.router.navigate(['/login'])
+    //}
     this.findByIdUsuario()
   }
 

@@ -23,10 +23,10 @@ export class CategoriaDeleteComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0)
 
-    if(environment.token == ''){
-      alert('Sua sessão expirou, faça login novamente!')
-      this.router.navigate(['/login'])
-    }
+    // if(environment.token == ''){
+    //   alert('Sua sessão expirou, faça login novamente!')
+    //   this.router.navigate(['/login'])
+    // }
 
     this.idCategoria = this.route.snapshot.params['id']
     this.findByCategoria(this.idCategoria)

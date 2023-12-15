@@ -24,7 +24,7 @@ export class MenuComponent implements OnInit {
 
   sair(){
     this.router.navigate(['/login'])
-    environment.token = ''
+    //environment.token = ''
     environment.nome = ''
     environment.foto = ''
     environment.id = 0

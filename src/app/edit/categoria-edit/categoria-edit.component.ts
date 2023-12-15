@@ -23,9 +23,9 @@ export class CategoriaEditComponent implements OnInit {
     ngOnInit(){
       window.scroll(0,0)
 
-      if(environment.token == ''){
-        this.router.navigate(['/login'])
-      }
+      // if(environment.token == ''){
+      //   this.router.navigate(['/login'])
+      // }
       let id = this.route.snapshot.params['id']
       this.findByIdTema(id)
     }

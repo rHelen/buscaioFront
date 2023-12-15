@@ -25,9 +25,9 @@ export class UserEditComponent implements OnInit {
   ngOnInit() {
     window.scroll(0, 0)
 
-    if (environment.token == '') {
-      this.router.navigate(['/login'])
-    }
+    // if (environment.token == '') {
+    //   this.router.navigate(['/login'])
+    // }
 
     this.idUsuario = this.route.snapshot.params['id']
     this.findByUsuario(this.idUsuario)
@@ -53,7 +53,7 @@ export class UserEditComponent implements OnInit {
         this.usuario = resp
         this.router.navigate(['/feed'])
         alert('Usuario atualizado com sucesso, faça o login novamente.')
-        environment.token = ''
+        //environment.token = ''
         environment.nome = ''
         environment.foto = ''
         environment.id = 0
