@@ -16,24 +16,24 @@ export class PostagemService {
   // }
 
   getAllPostagens(): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>('http://localhost:9000//postagens')
+    return this.http.get<Postagem[]>('http://localhost:9000/postagens/all')
   }
 
   getByIdPostagem(id: number): Observable<Postagem>{
-    return this.http.get<Postagem>(`http://localhost:9000//postagens/${id}`)
+    return this.http.get<Postagem>(`http://localhost:9000/postagens/${id}`)
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.post<Postagem>('http://localhost:9000//postagens', postagem)
+    return this.http.post<Postagem>('http://localhost:9000/postagens', postagem)
 
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.put<Postagem>('http://localhost:9000//postagens', postagem)
+    return this.http.put<Postagem>('http://localhost:9000/postagens', postagem)
   }
 
   deletePostagem(id: number){
-    return this.http.delete(`http://localhost:9000//postagens/${id}`)
+    return this.http.delete(`http://localhost:9000/postagens/${id}`)
   }
   // getAllPostagens(): Observable<Postagem[]>{
   //   return this.http.get<Postagem[]>('https://buscaio.herokuapp.com/postagens', this.token)

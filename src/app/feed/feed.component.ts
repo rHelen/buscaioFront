@@ -18,14 +18,15 @@ export class FeedComponent implements OnInit {
   listaPostagens: Postagem[]
 
   tema: Categoria = new Categoria()
+  //listaTemas: any[] = [{"id":1,"tema":"Tecnologia"},{"id":1,"tema":"Programação"}]
   listaTemas: Categoria[]
   idTema: number
 
   usuario: Usuario = new Usuario()
-  idusuario = environment.id
-  foto = environment.foto
-  nome = environment.nome
-  tipo = environment.tipo
+  idusuario = 1
+  foto = "https://www.github.com/rHelen.png"
+  nome = "Rute Helen Costa"
+  tipo = "Padrão"
 
 
   constructor(
@@ -42,6 +43,8 @@ export class FeedComponent implements OnInit {
     //   this.router.navigate(['/login'])
     // }
     //sthis.authService.refreshToken()
+
+    //Tirando o get de temas pra deixar fixo
     this.getAllTemas()
     this.getAllPostagens()
   }
@@ -72,11 +75,21 @@ export class FeedComponent implements OnInit {
   }
 
   publicar(){
+    let usuarioPost: Usuario = {
+      "id": 1,
+      "nome":"Rute Helen Costa",
+      "usuario":"rute@email.com",
+      "senha":"12345678",
+      "foto":"https://www.github.com/rHelen.png",
+      "tipo": "Padrão",
+      "postagem": []
+      }
+
     this.tema.id = this.idTema
     this.postagem.categoria = this.tema
 
-    this.usuario.id = this.idusuario
-    this.postagem.usuario = this.usuario
+    this.usuario.id = 1
+    this.postagem.usuario = usuarioPost
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
